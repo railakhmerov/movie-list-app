@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="scss/main.css">
+    <title>Movie List App</title>
+</head>
+<body>
+    <section class="movies-list">
+        <div class="container">
+            <div class="movies-list-inner">
+                <div class="movies__title">
+                    <div class="top-title__texts">
+                        <h2 class="top-title__text_movies-list">Список фильмов</h2>
+                        <h2 class="top-title__text_year">2025</h2>
+                    </div>
+                    <div class="main-title">
+                        <h2>Посмотреть</h2>
+                    </div>
+                </div>
+                <div class="movies-content">
+                    <div class="movies-content__container">
+                        <div class="input-block">
+                            <div class="input-block__input">
+                                <input
+                                class="movie-input js-movie-input"
+                                placeholder="Добавить фильм"
+                                type="text">
+                            </div>
+                            <div class="input-block__btn">
+                                <button class="add-movie-btn js-add-movie-btn">
+                                    <img src="img/add-movie-btn.svg" alt="add-movie-btn">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="movies-list">
+                            <div class="movies-list__wrapper">
+                                <ul class="movies-list__items js-movies-list__items"> 
+                                    <!--Сюда выводим названия фильмов из input-->
+                                    <!-- <li class="movies-list__item js-movies-list__item"></li> -->
+                                </ul> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

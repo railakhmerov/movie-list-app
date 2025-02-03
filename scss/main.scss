@@ -1,0 +1,204 @@
+:root {
+    --light: #F3F6F9;
+    --light-gray: #3A3939;
+    --purple: #6532F8;
+    --deleted-movie: #2e2e2e;
+    --placeholder-gray: #808080;
+    --bg-dark: #181818;
+    --bg-light-dark: #232323;
+}
+
+* {
+    // -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    
+    font-family: "Arimo", serif;
+    font-size: 18px;
+
+    color: var(--light);
+    background-color: var(--bg-dark);
+}
+
+.container {
+    height: 100%;
+    width: 1250px;
+    margin: 0 auto;
+}
+
+section.movies-list {
+    height: 100%;
+    width: 100%;
+    .container {
+        .movies-list-inner {
+            height: 100%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            .movies__title {
+                padding-left: 75px;
+                margin-bottom: 45px;
+                display: flex;
+                flex-direction: column;
+                .top-title__texts {
+                    display: flex;
+                    align-items: center;
+                    h2.top-title__text_movies-list {
+                        padding: 10px 25px;
+                        border-radius: 200px;
+                        background-color: var(--purple);
+                    }
+                    h2.top-title__text_year {
+                        padding: 10px 25px;
+                        border-radius: 200px;
+                        background-color: var(--purple);
+                    }
+                }
+                .main-title {
+                    h2 {
+                        font-size: 120px;
+                    }
+                }
+            }
+            .movies-content {
+                width: 100%;
+                position: relative;
+                border-radius: 20px;
+                background-color: var(--bg-light-dark);
+                overflow: hidden;
+                .movies-content__container {
+                    padding: 70px;
+                    .input-block {
+                        margin-bottom: 40px;
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                        .input-block__input {
+                            input.movie-input {
+                                width: 410px;
+                                border: none;
+                                border-bottom: 1px solid var(--placeholder-gray);
+                                line-height: 62px;
+                                color: var(--light);
+                                font-size: 30px;
+                                background-color: transparent;
+                                caret-color: var(--light);
+                            }
+                            input::placeholder {
+                                color: var(--placeholder-gray);
+                                font-size: 30px;
+                            }
+                            input:focus {
+                                outline: none;
+                            }
+                        }
+                        .input-block__btn {
+                            button.add-movie-btn {
+                                padding: 15px;
+                                border-radius: 50%;
+                                border: none;
+                                background-color: var(--purple);
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .movies-list {
+                        max-width: 100%;
+                        overflow: hidden;
+                        .movies-list__wrapper {
+                            ul.movies-list__items {
+                                min-height: 400px;
+                                height: 510px;
+                                max-height: max-content;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 3px;
+                                overflow: hidden scroll;
+                                li.movies-list__item {
+                                    display: none;
+                                    min-height: 60px;
+                                    max-height: 70px;
+                                    padding: 20px 50px;
+                                    display: flex;
+                                    align-items: center;
+                                    border-radius: 10px;
+                                    background-color: var(--light-gray);
+                                    .btn-and-name-movie {
+                                        position: relative;
+                                        width: 100%;
+                                        height: 100%;
+                                        display: flex;
+                                        gap: 10px;
+                                        align-items: center;
+                                        label.select-movie-label {
+                                            input.select-movie-btn { // input checkbox
+                                                width: 30px;
+                                                position: relative;
+                                                top: 50%;
+                                                left: 50%;
+                                                transform: translate(-50% -50%);
+                                                border: none;
+                                                background-color: transparent;
+                                            }
+                                            input[type="checkbox"] {
+                                                display: none;
+                                            }
+                                            svg {
+                                                min-width: 100%;
+                                                min-height: 100%;
+                                                border-radius: 50%;
+                                            }
+                                        }
+                                        p {
+                                            font-size: 20px;
+                                        }
+                                    }
+                                    .btn-delete-movie-btn {
+                                        button {
+                                            border: none;
+                                            background-color: transparent;
+                                            svg {
+                                                min-width: 100%;
+                                                min-height: 100%;
+                                                fill: #F3F6F9;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .deleted-movie_active { // когда фильм просмотрен
+                                li.movies-list__item {
+                                    .btn-and-name-movie {
+                                        label.select-movie-label {
+                                            input.select-movie-btn {}
+                                            svg {
+                                                background-color: var(--purple);
+                                            }
+                                        }
+                                        p {
+                                            color: var(--placeholder-gray);
+                                            text-decoration: line-through;
+                                        }
+                                    }
+                                    .btn-delete-movie-btn {
+                                        button {
+                                            svg {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .movies-list__items::-webkit-scrollbar {
+                                width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
