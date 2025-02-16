@@ -25,6 +25,29 @@ html, body {
     margin: 0 auto;
     padding: 0 20px;
 }
+@media (max-width: 1000px) {
+    .container {
+        height: 100%;
+        width: 750px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        height: 100%;
+        width: 600px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 620px) {
+    .container {
+        height: 100%;
+        width: 100%;
+        padding: 0 20px;
+    }
+}
 
 section.movies-list {
     height: 100%;
@@ -47,16 +70,52 @@ section.movies-list {
                         border-radius: 200px;
                         background-color: var(--purple);
                     }
+                    @media (max-width: 620px) {
+                        h2.top-title__text_movies-list {
+                            font-size: 16px;
+                        }
+                    }
                     h2.top-title__text_year {
                         padding: 10px 25px;
                         border-radius: 200px;
                         background-color: var(--purple);
+                    }
+                    @media (max-width: 620px) {
+                        h2.top-title__text_year {
+                            font-size: 16px;
+                        }
                     }
                 }
                 .main-title {
                     h2 {
                         font-size: 100px;
                     }
+                }
+                @media (max-width: 1000px) {
+                    .main-title {
+                        h2 {
+                            font-size: 80px;
+                        }
+                    }
+                }
+                @media (max-width: 620px) {
+                    .main-title {
+                        h2 {
+                            font-size: 55px;
+                        }
+                    }
+                }
+                @media (max-width: 500px) {
+                    .main-title {
+                        h2 {
+                            font-size: 40px;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 620px) {
+                .movies__title {
+                    padding-left: 20px;
                 }
             }
             .movies-content {
@@ -91,6 +150,29 @@ section.movies-list {
                                 outline: none;
                             }
                         }
+                        @media (max-width: 768px) {
+                            .input-block__input {
+                                input.movie-input {
+                                    width: 100%;
+                                }
+                                input::placeholder {
+                                    font-size: 18px;
+                                }
+                                input:focus {
+                                    outline: none;
+                                }
+                            }
+                        }
+                        @media (max-width: 500px) {
+                            .input-block__input {
+                                input.movie-input {
+                                    max-width: 200px;
+                                }
+                                input::placeholder {
+                                    font-size: 18px;
+                                }
+                            }
+                        }
                         .input-block__btn {
                             button.add-movie-btn {
                                 padding: 15px;
@@ -101,6 +183,24 @@ section.movies-list {
                                     width: 100%;
                                 }
                             }
+                        }
+                        @media (max-width: 500px) {
+                            .input-block__btn {
+                                button.add-movie-btn {
+                                    padding: 10px;
+                                    border-radius: 50%;
+                                    img {
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @media (max-width: 500px) {
+                        .input-block {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 10px;
                         }
                     }
                     .movies-list {
@@ -191,6 +291,11 @@ section.movies-list {
                                 width: 0;
                             }
                         }
+                    }
+                }
+                @media (max-width: 620px) {
+                    .movies-content__container {
+                        padding: 40px;
                     }
                 }
             }

@@ -24,6 +24,29 @@ html, body {
   padding: 0 20px;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    height: 100%;
+    width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    height: 100%;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 620px) {
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+  }
+}
 section.movies-list {
   height: 100%;
   width: 100%;
@@ -48,13 +71,43 @@ section.movies-list .container .movies-list-inner .movies__title .top-title__tex
   border-radius: 200px;
   background-color: var(--purple);
 }
+@media (max-width: 620px) {
+  section.movies-list .container .movies-list-inner .movies__title .top-title__texts h2.top-title__text_movies-list {
+    font-size: 16px;
+  }
+}
 section.movies-list .container .movies-list-inner .movies__title .top-title__texts h2.top-title__text_year {
   padding: 10px 25px;
   border-radius: 200px;
   background-color: var(--purple);
 }
+@media (max-width: 620px) {
+  section.movies-list .container .movies-list-inner .movies__title .top-title__texts h2.top-title__text_year {
+    font-size: 16px;
+  }
+}
 section.movies-list .container .movies-list-inner .movies__title .main-title h2 {
   font-size: 100px;
+}
+@media (max-width: 1000px) {
+  section.movies-list .container .movies-list-inner .movies__title .main-title h2 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 620px) {
+  section.movies-list .container .movies-list-inner .movies__title .main-title h2 {
+    font-size: 55px;
+  }
+}
+@media (max-width: 500px) {
+  section.movies-list .container .movies-list-inner .movies__title .main-title h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 620px) {
+  section.movies-list .container .movies-list-inner .movies__title {
+    padding-left: 20px;
+  }
 }
 section.movies-list .container .movies-list-inner .movies-content {
   width: 100%;
@@ -93,6 +146,31 @@ section.movies-list .container .movies-list-inner .movies-content .movies-conten
 section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input:focus {
   outline: none;
 }
+@media (max-width: 768px) {
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input.movie-input {
+    width: 100%;
+  }
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input::-moz-placeholder {
+    font-size: 18px;
+  }
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input::placeholder {
+    font-size: 18px;
+  }
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input:focus {
+    outline: none;
+  }
+}
+@media (max-width: 500px) {
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input.movie-input {
+    max-width: 200px;
+  }
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input::-moz-placeholder {
+    font-size: 18px;
+  }
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__input input::placeholder {
+    font-size: 18px;
+  }
+}
 section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__btn button.add-movie-btn {
   padding: 15px;
   border-radius: 50%;
@@ -101,6 +179,22 @@ section.movies-list .container .movies-list-inner .movies-content .movies-conten
 }
 section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__btn button.add-movie-btn img {
   width: 100%;
+}
+@media (max-width: 500px) {
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__btn button.add-movie-btn {
+    padding: 10px;
+    border-radius: 50%;
+  }
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block .input-block__btn button.add-movie-btn img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container .input-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
 }
 section.movies-list .container .movies-list-inner .movies-content .movies-content__container .movies-list {
   max-width: 100%;
@@ -171,4 +265,9 @@ section.movies-list .container .movies-list-inner .movies-content .movies-conten
 }
 section.movies-list .container .movies-list-inner .movies-content .movies-content__container .movies-list .movies-list__wrapper .movies-list__items::-webkit-scrollbar {
   width: 0;
+}
+@media (max-width: 620px) {
+  section.movies-list .container .movies-list-inner .movies-content .movies-content__container {
+    padding: 40px;
+  }
 }/*# sourceMappingURL=main.css.map */
