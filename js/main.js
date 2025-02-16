@@ -7,12 +7,15 @@ const deleteMovieSvgNode = document.querySelector('.js-delete-movie-svg');
 
 let movieInputValue = '';
 
-const films = [];
+let films = [];
 
 // Обработчики событий -------------------------
 addMovieBtnNode.addEventListener('click', function() {
     // 1. Получаем значение из input
     movieInputValue = getValueInputFromUser();
+
+    if (!movieInputValue) return;
+
 
     // 2. Выводим данные из input
     let moviesItemHTML = `
@@ -39,16 +42,18 @@ addMovieBtnNode.addEventListener('click', function() {
         </li>
     `;
     moviesListItems.innerHTML += moviesItemHTML;
-    console.log(moviesListItems);
 
     films.push(movieInputValue);
-    console.log(films)
+
+    console.log(films);
 });
 
 moviesListItems.addEventListener('click', function(event) {
     // Вещаем обработчик на родителя для всех кнопок, чтобы отслеживать оба действия
     // 1. Если фильм просмотрели, то изменится дизайн
-    keystrokeTestOnDeletedMovie(event); // Проверка на нажатие на кнопку удаления фильма
+    keystrokeTestOnSelectMovie(event); // Проверка на нажатие на кнопку промотрен фильм или нет
+
+    keystrokeTestOnDeleteMovie(event);
 });
 // --------------------------------------
 
@@ -58,7 +63,7 @@ function getValueInputFromUser() {
     return inputValue;
 }
 
-function keystrokeTestOnDeletedMovie(event) { // Проверка на нажатие на кнопку удаления фильма
+function keystrokeTestOnSelectMovie(event) { // Проверка на нажатие на кнопку промотрен фильм или нет
     let currentClicked = event.target.closest('.js-select-movie-btn'); // ищем элемент с таким класом
 
     if (currentClicked) {
@@ -68,3 +73,25 @@ function keystrokeTestOnDeletedMovie(event) { // Проверка на нажа�
         }
     };
 }
+
+function keystrokeTestOnDeleteMovie(event) { // Проверка на нажатие на кнопку удаления фильма
+    let currentClicked = event.target.closest('.js-delete-movie-btn');
+
+    if (currentClicked) {
+        let movieItem = currentClicked.closest('.js-movies-list__item');
+        
+        // Получаем все элементы списка
+        let allMovieItems = document.querySelectorAll('.js-movies-list__item');
+        
+        // Преобразуем в массив и находим индекс текущего элемента
+        let index = Array.from(allMovieItems).indexOf(movieItem);
+        
+        // Удаляем элемент из массива по найденному индексу
+        films.splice(index, 1);
+        
+        // Удаляем из DOM
+        movieItem.remove();
+
+        console.log(films);
+    };
+};
