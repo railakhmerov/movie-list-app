@@ -25,8 +25,9 @@ html, body {
 
 .container {
     height: 100%;
-    width: 1250px;
+    width: 980px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 section.movies-list {
@@ -58,7 +59,7 @@ section.movies-list {
                 }
                 .main-title {
                     h2 {
-                        font-size: 120px;
+                        font-size: 100px;
                     }
                 }
             }
@@ -110,7 +111,7 @@ section.movies-list {
                         max-width: 100%;
                         overflow: hidden;
                         .movies-list__wrapper {
-                            ul.movies-list__items {
+                            .movies-list__items {
                                 min-height: 400px;
                                 height: 510px;
                                 max-height: max-content;
@@ -118,8 +119,7 @@ section.movies-list {
                                 flex-direction: column;
                                 gap: 3px;
                                 overflow: hidden scroll;
-                                li.movies-list__item {
-                                    display: none;
+                                .movies-list__item {
                                     min-height: 60px;
                                     max-height: 70px;
                                     padding: 20px 50px;
@@ -134,27 +134,26 @@ section.movies-list {
                                         display: flex;
                                         gap: 10px;
                                         align-items: center;
-                                        label.select-movie-label {
-                                            input.select-movie-btn { // input checkbox
+                                        .btn-and-name-movie__btn-select {
+                                            .select-movie-btn {
                                                 width: 30px;
-                                                position: relative;
-                                                top: 50%;
-                                                left: 50%;
-                                                transform: translate(-50% -50%);
+                                                // position: relative;
+                                                // top: 50%;
+                                                // left: 50%;
+                                                // transform: translate(-50% -50%);
                                                 border: none;
                                                 background-color: transparent;
-                                            }
-                                            input[type="checkbox"] {
-                                                display: none;
-                                            }
-                                            svg {
-                                                min-width: 100%;
-                                                min-height: 100%;
-                                                border-radius: 50%;
+                                                svg {
+                                                    min-width: 100%;
+                                                    min-height: 100%;
+                                                    border-radius: 50%;
+                                                }
                                             }
                                         }
-                                        p {
-                                            font-size: 20px;
+                                        .btn-and-name-movie__name-movie {
+                                            p {
+                                                font-size: 20px;
+                                            }
                                         }
                                     }
                                     .btn-delete-movie-btn {
@@ -164,29 +163,29 @@ section.movies-list {
                                             svg {
                                                 min-width: 100%;
                                                 min-height: 100%;
-                                                fill: #F3F6F9;
+                                                fill: var(--light);
                                             }
                                         }
                                     }
                                 }
-                            }
-                            .deleted-movie_active { // когда фильм просмотрен
-                                li.movies-list__item {
+                                .deleted-movie { // добавляем класс, когда удалили фильм
+                                    background-color: var(--deleted-movie);
                                     .btn-and-name-movie {
-                                        label.select-movie-label {
-                                            input.select-movie-btn {}
+                                        .select-movie-btn {
                                             svg {
+                                                border-radius: 50%;
                                                 background-color: var(--purple);
                                             }
                                         }
                                         p {
-                                            color: var(--placeholder-gray);
                                             text-decoration: line-through;
+                                            color: var(--placeholder-gray);
                                         }
                                     }
                                     .btn-delete-movie-btn {
-                                        button {
+                                        .delete-movie {
                                             svg {
+                                                fill: #7c7c7c;
                                             }
                                         }
                                     }
