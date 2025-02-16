@@ -45,6 +45,7 @@ addMovieBtnNode.addEventListener('click', function() {
 
     films.push(movieInputValue);
 
+    movieInputNode.value = '';
     console.log(films);
 });
 
